@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kindle-push"
+version = "1.0.0"
+description = "Push and pull Kindle documents over USB MTP or HTTP, without Send-to-Kindle"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Mario Marku" }]
+keywords = ["kindle", "mtp", "ebook", "pdf", "epub", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+    "Topic :: System :: Hardware",
+]
+
+[project.scripts]
+kindle-push = "kindle_push:main"
+
+[project.urls]
+Homepage = "https://github.com/mariobx/kindle-push"
+
+[tool.setuptools]
+py-modules = ["kindle_push"]

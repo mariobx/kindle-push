@@ -1,0 +1,14 @@
+[Unit]
+Description=kindle-push receiver (push/pull Kindle documents over the network)
+After=graphical-session.target
+
+[Service]
+Type=simple
+# put KINDLE_PUSH_TOKEN=... in ~/.config/kindle-push.env (chmod 600)
+EnvironmentFile=-%h/.config/kindle-push.env
+ExecStart=%h/.local/bin/kindle-push serve --port 8737 --bind 127.0.0.1
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
